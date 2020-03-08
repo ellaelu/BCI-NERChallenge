@@ -10,9 +10,9 @@ Run preprocess.ipynb to create X_train and X_test to be used in models
 
 or
 
-Ingest the data from: 
-* /Data/X_train.npy
-* /Data/X_test.npy
+Ingest the data from as they are the post processed data using Riemann spaces (XDawnCovariance and Tangent Space mapping): 
+* /Data/X_train_final.npy
+* /Data/X_test_final.npy
 
 Train labels can be found in:
 * /Data/TrainLabels.csv
@@ -20,7 +20,8 @@ Train labels can be found in:
 True Test labels can be found in:
 * /Data/true_labels.csv
 
-Both array files are in 3dimensions, and must be converted to 2d to be used in models. See Models.ipynb for example.
+See Models.ipynb for application of data.
+
 ### Dataset
 Download Data from: https://www.kaggle.com/c/inria-bci-challenge/data
 
