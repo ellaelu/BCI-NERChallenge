@@ -72,33 +72,43 @@ xDawnCovariance consists of estimating a special form covariance matrix with too
 
 The final training and test sets are of the following shapes respectively: (5440, 210) and (3400, 210). Adding metadata is an option for some of the models, which increases the shape of the data into being (5440, 212) and (3400, 212) by adding the session number and feedback number in relation to the first feedback presented to the subject. 
 
+## Results
+
+The analysis techniques we applied are Logistic Regression, SVM, Random Forest, Decision Tree, EEGNet, as well as Elastic Net. The highest AUC calculated by sklearn.metrics was achieved by Logistic Regression with AUC = 0.67 on the baseline corrected version of the rebalanced dataset. We also submitted the models to Kaggle in order to receive their scores. The highest public score was achieved by Random Forests using the baseline corrected dataset with metadata included with a score of 0.696. The highest private score was achieved by Elastic Net on the non-baseline corrected dataset with metadata included with a score of 0.66, placing it in about 30th place on the Kaggle leaderboards.
+
+## Discussion
+
+We have learned that different models could vary dramatically to the output on the same data due to their internal decision making mechanism.. We also learn that the most complicated model does not guarantee the most accurate result, and sometimes a simple model, such as Logistic Regression or Elastic Net, can deliver an efficient solution to our current problem given efficient preprocessing. Each model performed best in different cases and in different manipulations of the dataset. This reinforces a crucial idea in Machine Learning that highlights the importance of pre-processing and its subsequent integration with the model.
+
+With better optimization and data gathering techniques, we believe helping locked-in syndrome patients is one of the major potential applications of ML in the future. Given our time constraints, we were unable to examine and test out many different types of pre-processing techniques. Given more time, we could’ve examined different epoching, bandpass, and baseline correction values and seen how the differences in those values affect each model's performance. We would also be excited to try other machine learning models and compose a more comprehensive result to determine which one works the best on the given data set.
+
 
 # References
 
-Dzulkifli, Syahizul Amri, et al. “Improved Weighted Learning Support Vector Machines (SVM) 
+> Dzulkifli, Syahizul Amri, et al. “Improved Weighted Learning Support Vector Machines (SVM) 
 for High Accuracy.” Improved Weighted Learning Support Vector Machines (SVM) for High Accuracy | Proceedings of the 2019 2nd International Conference on Computational Intelligence and Intelligent Systems, 1 Nov. 2019, dl.acm.org/doi/pdf/10.1145/3372422.3372432.
 
-Lawhern, V. J., Solon, A. J., Waytowich, N. R., Gordon, S. M., Hung, C. P., & Lance, B. J. (2018). EEGNet: a compact convolutional neural network for EEG-based brain–computer 
+> Lawhern, V. J., Solon, A. J., Waytowich, N. R., Gordon, S. M., Hung, C. P., & Lance, B. J. (2018). EEGNet: a compact convolutional neural network for EEG-based brain–computer 
 interfaces. Journal of Neural Engineering, 15(5), 056013. doi: 10.1088/1741-2552/aace8c
 
-Mishra, A. (2018, February 24). Retrieved from https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234
+> Mishra, A. (2018, February 24). Retrieved from https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234
 
-Tolles, Juliana; Meurer, William J (2016). "Logistic Regression Relating Patient Characteristics to Outcomes". JAMA. 316 (5): 533–4. doi:10.1001/jama.2016.7653. ISSN 0098-7484. OCLC 6823603312. PMID 27483067.
+> Tolles, Juliana; Meurer, William J (2016). "Logistic Regression Relating Patient Characteristics to Outcomes". JAMA. 316 (5): 533–4. doi:10.1001/jama.2016.7653. ISSN 0098-7484. OCLC 6823603312. PMID 27483067.
 
-Kamiński, B.; Jakubczyk, M.; Szufel, P. (2017). "A framework for sensitivity analysis of 
+> Kamiński, B.; Jakubczyk, M.; Szufel, P. (2017). "A framework for sensitivity analysis of 
 decision trees". Central European Journal of Operations Research. 26 (1): 135–159. doi:10.1007/s10100-017-0479-6. PMC 5767274. PMID 29375266.
 
-Kevric, J., & Subasi, A. (2017). Comparison of signal decomposition methods in classification of EEG signals for motor-imagery BCI system. Biomedical Signal Processing and Control, 31, 398–406. doi: 10.1016/j.bspc.2016.09.007
+> Kevric, J., & Subasi, A. (2017). Comparison of signal decomposition methods in classification of EEG signals for motor-imagery BCI system. Biomedical Signal Processing and Control, 31, 398–406. doi: 10.1016/j.bspc.2016.09.007
 
-Wang, Y., Deng, Y., Li, Z., & Zhang, H. (n.d.). Cogs 189 Final Project Presentation. La Jolla.
+> Wang, Y., Deng, Y., Li, Z., & Zhang, H. (n.d.). Cogs 189 Final Project Presentation. La Jolla.
 
-Zou, Hui, and Trevor Hastie. “Addendum: Regularization and Variable Selection via the Elastic 
+> Zou, Hui, and Trevor Hastie. “Addendum: Regularization and Variable Selection via the Elastic 
 Net.” Journal of the Royal Statistical Society: Series B (Statistical Methodology), vol. 67, no. 5, 2005, pp. 768–768., doi:10.1111/j.1467-9868.2005.00527.x.
 
-Hastie, Trevor, et al. The Elements of Statistical Learning: Data Mining, Inference, and 
+> Hastie, Trevor, et al. The Elements of Statistical Learning: Data Mining, Inference, and 
 Prediction. Springer, 2017.
 
-Rivet, B.; Souloumiac, A.; Attina, V.; Gibert, G., "xDAWN Algorithm to Enhance Evoked Potentials: Application to Brain–Computer Interface," IEEE Transactions on Biomedical Engineering, vol.56, no.8, pp.2035,2043, Aug. 2009
+> Rivet, B.; Souloumiac, A.; Attina, V.; Gibert, G., "xDAWN Algorithm to Enhance Evoked Potentials: Application to Brain–Computer Interface," IEEE Transactions on Biomedical Engineering, vol.56, no.8, pp.2035,2043, Aug. 2009
 
-A. Barachant, S. Bonnet, M. Congedo and C. Jutten, “Multiclass Brain-Computer Interface Classification by Riemannian Geometry,” in IEEE Transactions on Biomedical Engineering, vol. 59, no. 4, p. 920-928, 2012.
+> A. Barachant, S. Bonnet, M. Congedo and C. Jutten, “Multiclass Brain-Computer Interface Classification by Riemannian Geometry,” in IEEE Transactions on Biomedical Engineering, vol. 59, no. 4, p. 920-928, 2012.
 
